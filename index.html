@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESUMEIQ- AI Powered Resume Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    
+    <main class="main">
+        <div class="header">
+            <div class="badge" >✨AI-Powered Analysis</div>
+            <h1 class="title"><span class="gradient-text">Resume</span><span>IQ</span></h1>
+            <p class="subtitle">Drop your resume and get instant, actionable feedback to land more interviews.</p>
+        </div>
+
+        <!--Upload Section-->
+         <div id="upload-section" class="upload-area">
+      <label id="upload-label" class="upload-label" for="file-upload">
+        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <p class="upload-title">Drop your resume here</p>
+        <p class="upload-hint">or click to browse · PDF, DOCX, TXT</p>
+        <input id="file-upload" type="file" accept=".pdf,.docx,.doc,.txt" hidden />
+      </label>
+      <div id="file-info" class="file-info hidden">
+        <div class="file-icon-wrap"><svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></div>
+        <div class="file-details"><p id="file-name" class="file-name"></p><p id="file-size" class="file-size"></p></div>
+        <button id="clear-btn" class="clear-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        <div id="analyzing-indicator" class="analyzing hidden"><span class="pulse-dot"></span><span class="analyzing-text">Analyzing...</span></div>
+      </div>
+    </div>
+
+      <!--Result-->
+      <div id="results" class="results hidden">
+        <section class="card score-card">
+        <h2 class="card-label">Resume Score</h2>
+        <div id="score-rings" class="score-rings"></div>
+      </section>
+      <!--Two columns Strength and Improvements-->
+
+      <div class="two-col">
+        <!--Strengths-->
+        <section class="card">
+          <div class="card-header">
+            <svg class="icon-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                <h3 class="card-label">Strengths</h3></div>
+            <ul id="strengths-list" class="bullet-list"></ul>
+        </section>
+        <!--Improvements-->
+        <section class="card">
+          <div class="card-header">
+            <svg class="icon-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/>
+                <line x1="12" y1="9" x2="12" y2="18"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <h3 class="card-label">Improvements</h3>
+            </div>
+            <ul id="improvements-list" class="bullet-list"></ul>
+        </section>
+
+        <section class="card">
+        <div class="card-header">
+            <svg class="icon-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+                <path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                <h3 class="card-label">Suggestions</h3></div>
+            <div id="suggestions-list" class="suggestions-list"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+            <svg class="icon-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+            <h3 class="card-label">Keyword Analysis</h3></div>
+        <div id="keywords-list" class="keywords-list"></div>
+      </section>
+      </div>
+      
+      
+      </div>
+
+      
+      <footer class="footer">Your resume is analyzed locally · Never stored · 100% private</footer>
+    </main>
+   <script src="script.js"></script>
+</body>
+</html>
